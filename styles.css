@@ -1,0 +1,98 @@
+h1 {
+  /* font-size: 1rem; */
+  display: inline-block;
+}
+
+.headerDiv {
+  border: 1px solid black;
+  justify-content: center;
+
+}
+
+.library {
+  display: flex;
+  flex: row;
+  flex-wrap: wrap;
+}
+
+.newBook {
+  margin-top: 20px;
+}
+
+.newBookForm {
+  border: 2px solid black;
+  display: inline-block;
+  padding: 20px;
+  margin: 20px;
+}
+
+
+input {
+  display: block;
+}
+
+.bookImage {
+  width: 15vw;
+  display: inline-block;
+}
+
+
+
+
+
+
+
+
+h4 {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+ 
+.title {
+  border: 1px solid purple;
+  text-align: center;
+  width: 200px;
+  height: 80px;
+}
+
+
+.author {
+  border: 1px slid green;
+  text-align: center;
+  width: 200px;
+  font-size: 1.2rem;
+  /* font-weight: bold; */
+}
+
+
+.section {
+  margin-bottom: 5px;
+}
+
+
+
+.pages {
+  border: 1px solid red;
+}
+
+.haveRead {
+  border: 1px solid blue;
+}
+
+
+.book {
+  border: 1px solid orange;
+  align-items: center;
+  max-width: 200px;
+  /* padding: 10px 0; */
+  margin-right: 20px;
+
+
+}
+
+
+.div {
+  text-align: center;
+}
