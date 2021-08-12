@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+}
+
 h1 {
   /* font-size: 1rem; */
   display: inline-block;
@@ -10,6 +14,7 @@ h1 {
 }
 
 .library {
+  border: 1px solid cyan;
   display: flex;
   flex: row;
   flex-wrap: wrap;
@@ -21,15 +26,51 @@ h1 {
 
 .newBookForm {
   border: 2px solid black;
-  display: inline-block;
   padding: 20px;
   margin: 20px;
+  background-color: white;
+  width: 40vw;
+  /* height: 300px; */
+  /* text-align: center; */
+  position: relative;
 }
 
 
-input {
-  display: block;
+
+
+
+
+.close {
+  position: absolute;
+  right: 20px;
+  transform: rotate(45deg);
+  top: 10px;
+  font-size: 1.5rem;
+
 }
+
+td {
+  padding: 5px;
+}
+
+.buttons {
+  margin-top: 10px;
+  width: 100%;
+  text-align: center;
+
+}
+
+.form-label {
+  text-align: right;
+  
+}
+
+.cancel {
+  margin-left: 10px;
+}
+
+
+
 
 .bookImage {
   width: 15vw;
@@ -38,18 +79,12 @@ input {
 
 
 
-
-
-
-
-
 h4 {
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
+ /* display: flex;
+ justify-content: center;
+ align-items: center; */
 }
 
- 
 .title {
   border: 1px solid purple;
   text-align: center;
@@ -95,4 +130,17 @@ h4 {
 
 .div {
   text-align: center;
+}
+
+
+.form-popup {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  display: none;
 }

@@ -1,6 +1,7 @@
 const library = document.querySelector(".library");
 const newBookButton = document.querySelector(".newBook");
-const newBookForm = document.querySelector(".newBookForm");
+const formPopup = document.querySelector(".form-popup");
+const newBookForm = document.querySelector('.newBookForm')
 const cancelButton = document.querySelector(".cancel");
 const submitButton = document.querySelector(".submit");
 
@@ -19,6 +20,7 @@ function Book(title, author, pages, haveRead) {
   this.pages = pages;
   this.haveRead = haveRead;
   
+  
 
   this.info = function() {
       return `${this.title} by ${this.author}, ${this.pages} pages, ${this.haveRead}`
@@ -28,12 +30,12 @@ function Book(title, author, pages, haveRead) {
 
 
 function openForm(){
-  newBookForm.setAttribute("style", "display: inline-block")
+  formPopup.setAttribute("style", "display: flex")
 };
 
 
 function closeForm(){
-  newBookForm.setAttribute("style", "display: none")
+  formPopup.setAttribute("style", "display: none")
 };
 
 

@@ -1,79 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Online Library</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="headerDiv">
-      <img src="images/pexels-cottonbro-4690297.jpg" alt="books image" class="bookImage">
+  <div class="headerDiv">
+    <img src="images/pexels-cottonbro-4690297.jpg" alt="books image" class="bookImage">
 
-      <h1>My Online Library</h1>
-    </div>
-    
-    
-    <div class="library">
-     
+    <h1>My Online Library</h1>
 
-    </div>
-
-    <div>
-      <button class="newBook"> + New Book</button>
-
-    </div>
+  </div>
+  
+  
+  <div class="library">
     
 
+  </div>
+
+  <div>
+    <button class="newBook"> + New Book</button>
+
+  </div>
+  
+  
+
+
+  <div class="form-popup">
 
     <form class="newBookForm" id="formStuff">
-      <div>
-        <label for="bookTitle">Title:</label>
-        <input type="text" name="bookTitle" placeholder="Title" required>
+      <div class="close">+</div>
 
-      </div>
+      <table>
 
-      <div>
-        <label for="bookAuthor">Author:</label>
-        <input type="text" name="bookAuthor" placeholder="Author" required>
+        <tr>
+          <td class="form-label">
+            <label for="bookTitle">Title:</label>
+          </td>
+          <td>
+            <input type="text" name="bookTitle" placeholder="Title" required>
+          </td>
+        </tr>
 
-      </div>
+        <tr>
+          <td class="form-label">
+            <label for="bookAuthor">Author:</label>
+          </td>
+          <td>
+            <input type="text" name="bookAuthor" placeholder="Author" required>
+          </td>
+        </tr>
 
-      <div>
-        <label for="pages">Number of Pages:</label>
-        <input type="number" name="pages" min="0" required>
-
-      </div>
-
-      <div>
-        Completed Reading?
-
-        <div>
-          <label for="Yes">Yes</label>
-          <input type="radio" name="haveRead" id="Yes" value="Yes" required>
-
-          <label for="No">No</label>
-          <input type="radio" name="haveRead" id="No" value="No" required>
-
-        </div>
-      </div>     
+        <tr>
+          <td class="form-label">
+            <label for="pages"># of Pages:</label>
+          </td>
+          <td>
+            <input type="number" name="pages" min="0" required>
+          </td>
+        </tr>
 
 
-      <div>
+        <tr>
+          <td class="form-label"> 
+            Completed Reading?
+          </td>
+          <td>
+            <label for="Yes">Yes</label>
+            <input type="radio" name="haveRead" id="Yes" value="Yes" required>
+  
+            <label for="No">No</label>
+            <input type="radio" name="haveRead" id="No" value="No" required>
+          </td>
+
+        </tr>
+        
+
+
+
+
+      </table>  
+
+
+      <div class="buttons">
         <button type="submit" class="submit">Add Book</button>
         <button class="cancel">Cancel</button>
         <!-- <input type="submit" value="Add Book" class="submit">
         <input type="button" value="Cancel" class="cancel"> -->
 
 
-      </div>
-
+      </div>  
 
     </form>
- 
 
 
-    <script src="script.js"></script>
+
+  </div>
+
+
+
+  <script src="script.js"></script>
 </body>
 </html>
