@@ -30,7 +30,7 @@ h1 {
   flex-wrap: wrap;
 }
 
-.newBook {
+.newBookButton {
   position: absolute;
   bottom: 20px;
 }
@@ -47,11 +47,11 @@ h1 {
 
 
 
-.close {
+.closeButton {
   position: absolute;
-  right: 15px;
+  right: 10px;
   transform: rotate(45deg);
-  top: 5px;
+  top: 3px;
   font-size: 1.5rem;
   cursor: pointer;
 
@@ -89,7 +89,7 @@ td {
 
 
 .title {
-  border: 1px solid purple;
+  /* border: 1px solid purple; */
   text-align: center;
   /* width: 100%; */
   min-height: 80px;

@@ -1,10 +1,10 @@
 const library = document.querySelector(".library");
-const newBookButton = document.querySelector(".newBook");
+const newBookButton = document.querySelector(".newBookButton");
 const formPopup = document.querySelector(".form-popup");
 const newBookForm = document.querySelector('.newBookForm');
 const cancelButton = document.querySelector(".cancel");
 const submitButton = document.querySelector(".submit");
-const xForm = document.querySelector(".close");
+const xForm = document.querySelector(".closeForm");
 
 
 newBookButton.addEventListener("click", openForm);
@@ -24,7 +24,7 @@ function Book(title, author, pages, haveRead) {
   
 
   this.info = function() {
-      return `${this.title} by ${this.author}, ${this.pages} pages, ${this.haveRead}`
+      return `${this.title} by ${this.author}, ${this.pages} pages, Read: ${this.haveRead}`
   };
   
 };
@@ -63,9 +63,6 @@ function submitForm(e) {
     closeForm();
 
   };
-
-
-
 };
 
 
@@ -79,6 +76,16 @@ function createBook(book) {
   bookDiv.classList.add("book", checkReadStatus(bookIndex));
   library.appendChild(bookDiv);
 
+
+  let deleteButton = document.createElement("div");
+  deleteButton.classList.add("closeButton")
+  deleteButton.innerHTML = "+";
+  deleteButton.dataset.index = bookIndex;
+
+  deleteButton.addEventListener("click", deleteBook);
+  bookDiv.appendChild(deleteButton);
+
+
   let title = document.createElement("h4");
   title.classList.add("title", "section")
   title.textContent = `"${book.title}"`;
@@ -88,6 +95,7 @@ function createBook(book) {
   div.textContent = "by";
   div.classList.add("div", "section")
   bookDiv.appendChild(div);
+
 
   let author = document.createElement("div");
   author.classList.add("author", "section")
@@ -103,7 +111,7 @@ function createBook(book) {
 
   let read = document.createElement("div");
   read.classList.add("haveRead", "section");
-  read.textContent = book.haveRead;
+  read.textContent =`Read: ${book.haveRead}`;
   bookDiv.appendChild(read);
 
 
@@ -116,13 +124,7 @@ function createBook(book) {
   bookDiv.appendChild(changeReadStatus);
 
 
-  let deleteButton = document.createElement("button");
-  deleteButton.classList.add("delete")
-  deleteButton.innerHTML = "Remove";
-  deleteButton.dataset.index = bookIndex;
 
-  deleteButton.addEventListener("click", deleteBook);
-  bookDiv.appendChild(deleteButton);
 
 
 };
@@ -150,7 +152,7 @@ function changeStatus(e) {
   let target = document.querySelector("[data-index=" + "'" + `${index}` + "'" +"]");
 
   let selectedSection = target.querySelector(".haveRead");
-  selectedSection.innerHTML = myLibrary[index].haveRead
+  selectedSection.innerHTML = `Read: ${myLibrary[index].haveRead}`
 
   if (target.classList.contains("alreadyRead")) {
     target.classList.replace("alreadyRead", "notYetRead")
