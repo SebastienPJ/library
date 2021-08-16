@@ -3,15 +3,25 @@ body {
 }
 
 h1 {
-  /* font-size: 1rem; */
+  font-size: 3rem;
   display: inline-block;
 }
 
+
 .headerDiv {
   border: 1px solid black;
-  justify-content: center;
+  display: flex;
+  align-items: center;
 
 }
+
+
+.bookImage {
+  width: 13vw;
+  display: inline-block;
+  margin-right: 30px;
+}
+
 
 .library {
   border: 1px solid cyan;
@@ -21,17 +31,14 @@ h1 {
 }
 
 .newBook {
-  margin-top: 20px;
+  position: absolute;
+  bottom: 20px;
 }
 
 .newBookForm {
   border: 2px solid black;
-  padding: 20px;
-  margin: 20px;
+  padding: 40px;
   background-color: white;
-  width: 40vw;
-  /* height: 300px; */
-  /* text-align: center; */
   position: relative;
 }
 
@@ -42,10 +49,11 @@ h1 {
 
 .close {
   position: absolute;
-  right: 20px;
+  right: 15px;
   transform: rotate(45deg);
-  top: 10px;
+  top: 5px;
   font-size: 1.5rem;
+  cursor: pointer;
 
 }
 
@@ -72,39 +80,34 @@ td {
 
 
 
-.bookImage {
-  width: 15vw;
-  display: inline-block;
+
+
+
+.section {
+  margin-bottom: 10px;
 }
 
-
-
-h4 {
- /* display: flex;
- justify-content: center;
- align-items: center; */
-}
 
 .title {
   border: 1px solid purple;
   text-align: center;
-  width: 200px;
-  height: 80px;
+  /* width: 100%; */
+  min-height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
 .author {
   border: 1px slid green;
   text-align: center;
-  width: 200px;
+  /* width: 100%; */
   font-size: 1.2rem;
   /* font-weight: bold; */
 }
 
 
-.section {
-  margin-bottom: 5px;
-}
 
 
 
@@ -118,13 +121,29 @@ h4 {
 
 
 .book {
-  border: 1px solid orange;
+  border: 1px solid black;
+  /* background-color: yellow; */
   align-items: center;
-  max-width: 200px;
+  min-width: 200px;
+  max-width: 300px;
+  height: 300px;
   /* padding: 10px 0; */
-  margin-right: 20px;
+  margin:10px 20px 0 0;
+  position: relative;
 
 
+
+}
+
+
+.alreadyRead {
+  background-color: yellow;
+
+}
+
+
+.notYetRead {
+  background-color: gray;
 }
 
 
@@ -139,8 +158,15 @@ h4 {
   background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
   top: 0;
-  /* display: flex; */
   justify-content: center;
   align-items: center;
   display: none;
+}
+
+.delete {
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+  /* border-radius: 10px; */
+  padding: 0.3rem 0.7rem;
 }

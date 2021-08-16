@@ -1,15 +1,16 @@
 const library = document.querySelector(".library");
 const newBookButton = document.querySelector(".newBook");
 const formPopup = document.querySelector(".form-popup");
-const newBookForm = document.querySelector('.newBookForm')
+const newBookForm = document.querySelector('.newBookForm');
 const cancelButton = document.querySelector(".cancel");
 const submitButton = document.querySelector(".submit");
-
+const xForm = document.querySelector(".close");
 
 
 newBookButton.addEventListener("click", openForm);
 cancelButton.addEventListener("click", closeForm);
-submitButton.addEventListener("click", submitForm)
+xForm.addEventListener("click", closeForm);
+submitButton.addEventListener("click", submitForm);
 
 let myLibrary = [];
 
@@ -73,10 +74,9 @@ function submitForm(e) {
 function createBook(book) {
   let bookDiv = document.createElement("div");
   let bookIndex = myLibrary.indexOf(book);
-  bookDiv.setAttribute("style", "border: 1px solid black; background-color: yellow; width: 200px; height: 300px");
   bookDiv.dataset.index = bookIndex;
 
-  bookDiv.classList.add("book");
+  bookDiv.classList.add("book", checkReadStatus(bookIndex));
   library.appendChild(bookDiv);
 
   let title = document.createElement("h4");
@@ -107,8 +107,18 @@ function createBook(book) {
   bookDiv.appendChild(read);
 
 
+  let changeReadStatus = document.createElement("button");
+  changeReadStatus.classList.add("changeRead");
+  changeReadStatus.innerHTML = "Change Read Status"
+  changeReadStatus.dataset.index = bookIndex;
+
+  changeReadStatus.addEventListener("click", changeStatus);
+  bookDiv.appendChild(changeReadStatus);
+
+
   let deleteButton = document.createElement("button");
-  deleteButton.innerHTML = "Delete";
+  deleteButton.classList.add("delete")
+  deleteButton.innerHTML = "Remove";
   deleteButton.dataset.index = bookIndex;
 
   deleteButton.addEventListener("click", deleteBook);
@@ -127,6 +137,34 @@ function deleteBook(e) {
   updateLibrary(myLibrary);
 };
 
+
+function changeStatus(e) {
+  let index = e.target.dataset.index;
+
+  if (myLibrary[index].haveRead == "No") {
+    myLibrary[index].haveRead = "Yes"
+  } else {
+    myLibrary[index].haveRead = "No"
+  }
+
+  let target = document.querySelector("[data-index=" + "'" + `${index}` + "'" +"]");
+
+  let selectedSection = target.querySelector(".haveRead");
+  selectedSection.innerHTML = myLibrary[index].haveRead
+
+  if (target.classList.contains("alreadyRead")) {
+    target.classList.replace("alreadyRead", "notYetRead")
+  } else {
+    target.classList.replace("notYetRead", "alreadyRead")
+
+  }
+
+}
+
+
+function checkReadStatus(index) {  
+  return (myLibrary[index].haveRead == "No"? "notYetRead" : "alreadyRead")
+}
 
 
 function updateLibrary(allBooks){
