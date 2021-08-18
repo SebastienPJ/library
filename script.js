@@ -14,6 +14,23 @@ submitButton.addEventListener("click", submitForm);
 
 let myLibrary = [];
 
+let savedItems = JSON.parse(localStorage.getItem("book"));
+
+if (localStorage.length>0) {
+
+  myLibrary.push(savedItems);
+  // console.log(savedItems);
+  updateLibrary(myLibrary);
+
+  console.log(localStorage.length);
+
+};
+
+
+
+
+
+
 function Book(title, author, pages, haveRead) {
 
   this.title = title;
@@ -56,6 +73,12 @@ function submitForm(e) {
     let newBook = new Book(formData.get("bookTitle"), formData.get("bookAuthor"), formData.get("pages"), formData.get("haveRead"));
     
     addToLibrary(newBook);
+
+    let newBookIndex = myLibrary.indexOf(newBook)
+
+    // console.log(`Book index here: ${newBookIndex}`);
+
+    localStorage.setItem("book " + newBookIndex, JSON.stringify(newBook))
   
     createBook(newBook);
   
@@ -64,6 +87,12 @@ function submitForm(e) {
 
   };
 };
+
+
+
+function saveToLocalStorage(item) {
+  
+}
 
 
 
@@ -135,6 +164,8 @@ function deleteBook(e) {
   console.log("Book has been deleted");
 
   myLibrary.splice(dataIndex, 1);
+
+  localStorage.removeItem("book " + dataIndex)
 
   updateLibrary(myLibrary);
 };

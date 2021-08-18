@@ -12,6 +12,7 @@ h1 {
   border: 1px solid black;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
 }
 
@@ -19,7 +20,7 @@ h1 {
 .bookImage {
   width: 13vw;
   display: inline-block;
-  margin-right: 30px;
+  /* margin-right: 30px; */
 }
 
 
