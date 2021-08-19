@@ -14,19 +14,34 @@ submitButton.addEventListener("click", submitForm);
 
 let myLibrary = [];
 
-let savedItems = JSON.parse(localStorage.getItem("book"));
+// let savedItems = JSON.parse(localStorage.getItem("book"));
 
 if (localStorage.length>0) {
 
-  myLibrary.push(savedItems);
-  // console.log(savedItems);
-  updateLibrary(myLibrary);
+  // console.log(Object.keys(localStorage));
 
-  console.log(localStorage.length);
+
+  Object.keys(localStorage).sort().forEach(function(key) {
+    myLibrary.push(JSON.parse(localStorage.getItem(key)))
+  })
+
+  updateLibrary(myLibrary)
+  // myLibrary.push(savedItems);
+  // // console.log(savedItems);
+  // updateLibrary(myLibrary);
+
+  // console.log(localStorage.length);
 
 };
 
 
+
+function retrieveLocalStorage() {
+  // Object.keys(localStorage)
+
+
+
+}
 
 
 
@@ -59,7 +74,7 @@ function closeForm(){
 
 function addToLibrary(book) {
   myLibrary.push(book);
-}
+};
 
 
 function submitForm(e) {
@@ -74,12 +89,14 @@ function submitForm(e) {
     
     addToLibrary(newBook);
 
-    let newBookIndex = myLibrary.indexOf(newBook)
+    // let newBookIndex = myLibrary.indexOf(newBook)
 
     // console.log(`Book index here: ${newBookIndex}`);
 
-    localStorage.setItem("book " + newBookIndex, JSON.stringify(newBook))
-  
+    // localStorage.setItem("book " + newBookIndex, JSON.stringify(newBook))
+    
+    saveToLocalStorage(newBook);
+
     createBook(newBook);
   
     newBookForm.reset();
@@ -91,7 +108,9 @@ function submitForm(e) {
 
 
 function saveToLocalStorage(item) {
-  
+  let itemIndex = myLibrary.indexOf(item)
+  localStorage.setItem("book " + itemIndex, JSON.stringify(item))
+
 }
 
 
@@ -165,7 +184,7 @@ function deleteBook(e) {
 
   myLibrary.splice(dataIndex, 1);
 
-  localStorage.removeItem("book " + dataIndex)
+  // localStorage.removeItem("book " + dataIndex)
 
   updateLibrary(myLibrary);
 };
@@ -202,10 +221,12 @@ function checkReadStatus(index) {
 
 function updateLibrary(allBooks){
   removeOldLibrary();
+  localStorage.clear();
 
-
+  
   allBooks.forEach(book => {
-    createBook(book)  
+    createBook(book);
+    saveToLocalStorage(book);
   });
 };
 
