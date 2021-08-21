@@ -48,7 +48,7 @@ function Book(title, author, pages, haveRead) {
 
 
 function openForm(){
-  formPopup.setAttribute("style", "display: flex");
+  formPopup.setAttribute("style", "display: flex;");
 };
 
 
@@ -197,12 +197,12 @@ function changeStatus(e) {
     myLibrary[index].haveRead = "Yes"
   } else {
     myLibrary[index].haveRead = "No"
-  }
+  };
 
   saveToLocalStorage(myLibrary[index]);
 
 
-  updateBookCard(index)
+  updateBookCard(index);
 
 };
 
@@ -217,6 +217,6 @@ function updateBookCard(cardIndex) {
 
   targetCard.classList.contains("already-read")? 
     targetCard.classList.replace("already-read", "not-read"):
-    targetCard.classList.replace("not-read", "already-read")
+    targetCard.classList.replace("not-read", "already-read");
 
 };
