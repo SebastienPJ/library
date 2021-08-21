@@ -8,7 +8,7 @@ h1 {
 }
 
 
-.headerDiv {
+.header {
   border: 1px solid black;
   display: flex;
   align-items: center;
@@ -17,7 +17,7 @@ h1 {
 }
 
 
-.bookImage {
+.book-image {
   width: 13vw;
   display: inline-block;
   /* margin-right: 30px; */
@@ -31,12 +31,12 @@ h1 {
   flex-wrap: wrap;
 }
 
-.newBookButton {
+.new-book-button {
   position: absolute;
   bottom: 20px;
 }
 
-.newBookForm {
+.new-book-form {
   border: 2px solid black;
   padding: 40px;
   background-color: white;
@@ -48,7 +48,7 @@ h1 {
 
 
 
-.closeButton {
+.close-button {
   position: absolute;
   right: 10px;
   transform: rotate(45deg);
@@ -116,7 +116,7 @@ td {
   border: 1px solid red;
 }
 
-.haveRead {
+.have-read {
   border: 1px solid blue;
 }
 
@@ -137,13 +137,13 @@ td {
 }
 
 
-.alreadyRead {
+.already-read {
   background-color: yellow;
 
 }
 
 
-.notYetRead {
+.not-read {
   background-color: gray;
 }
 
