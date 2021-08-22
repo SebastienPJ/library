@@ -36,12 +36,12 @@ function Book(title, author, pages, haveRead) {
   this.pages = pages;
   this.haveRead = haveRead;
   
-  
+};
 
-  this.info = function() {
-      return `${this.title} by ${this.author}, ${this.pages} pages, Read: ${this.haveRead}`
-  };
-  
+Book.prototype.info = function() {
+  return `${this.title} by ${this.author}, ${this.pages} pages, Read: ${this.haveRead}`
+
+
 };
 
 
@@ -76,6 +76,8 @@ function createBookObject(e) {
 
     let newBook = new Book(formData.get("bookTitle"), formData.get("bookAuthor"), formData.get("pages"), formData.get("haveRead"));
     
+    newBook.prototype = Object.create(Book.prototype);
+
     addToLibrary(newBook);
     
     saveToLocalStorage(newBook);
