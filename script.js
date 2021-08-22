@@ -20,7 +20,7 @@ let myLibrary = [];
 
 if (localStorage.length>0) {
 
-  Object.keys(localStorage).sort().forEach(key => 
+  Object.keys(localStorage).sort(function(a,b){return a-b}).forEach(key => 
     myLibrary.push(JSON.parse(localStorage.getItem(key))));
 
   updateLibraryPage(myLibrary);
@@ -90,7 +90,7 @@ function createBookObject(e) {
 
 
 function saveToLocalStorage(item) {
-  localStorage.setItem("book " + findIndexOf(item), JSON.stringify(item));
+  localStorage.setItem(findIndexOf(item), JSON.stringify(item));
 };
 
 
