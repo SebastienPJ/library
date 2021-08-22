@@ -69,7 +69,6 @@ h1 {
   position: absolute;
   top: 0;
   justify-content: center;
-  /* align-items: center; */
   display: none;
   z-index: 1;
 }
@@ -143,7 +142,6 @@ table {
 
 .book {
   border: 1px solid black;
-  /* align-items: center; */
   width: 200px;
   height: 300px;
   margin: 0 20px 20px 0;
@@ -185,12 +183,12 @@ table {
 }
 
 .already-read {
-  background-color: yellow;
+  background-image: linear-gradient(180deg, #02b8ec, yellow );
 
 }
 
 .not-read {
-  background-color: #e7e7e7;
+  background-image: linear-gradient(0deg, #726f6f, #c7bdbd);
 }
 
 
