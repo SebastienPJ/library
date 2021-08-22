@@ -202,6 +202,8 @@ table {
 
   .library {
     justify-content: center;
+    width: 100%;
+    margin: auto;
   }
 
   .new-book-button {
@@ -210,7 +212,7 @@ table {
   }
 
   .book {
-    margin: 0 0 20px 0;
+    margin: 0 10px 20px 0;
 
   }
 
@@ -222,5 +224,6 @@ table {
 
   .book-button-div {
     justify-content: center;
+  
   }
 }
