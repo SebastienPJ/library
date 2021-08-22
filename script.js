@@ -114,41 +114,50 @@ function publishBook(book) {
 
 
   let title = document.createElement("h4");
-  title.classList.add("title", "section");
+  title.classList.add("title", "card-section");
   title.textContent = `"${book.title}"`;
   bookDiv.appendChild(title);
 
 
   let div = document.createElement("div");
   div.textContent = "by";
-  div.classList.add("div", "section");
+  div.classList.add("card-section");
   bookDiv.appendChild(div);
 
 
   let author = document.createElement("div");
-  author.classList.add("author", "section");
-  author.textContent = book.author;
+  author.classList.add("author", "card-section");
+  author.innerHTML = `<em>${book.author}</em>`;
   bookDiv.appendChild(author);
 
 
   let pages = document.createElement("div");
-  pages.classList.add("pages", "section");
+  pages.classList.add("pages", "card-section");
   pages.textContent = `Length: ${book.pages} pages`;
   bookDiv.appendChild(pages);
   
 
   let read = document.createElement("div");
-  read.classList.add("have-read", "section");
+  read.classList.add("have-read", "card-section");
   read.textContent =`Read: ${book.haveRead}`;
   bookDiv.appendChild(read);
 
 
+
+
+
+  let statusDiv = document.createElement("div");
+  statusDiv.classList.add("change-read")
+  bookDiv.appendChild(statusDiv);
+
+
   let changeReadStatus = document.createElement("button");
-  changeReadStatus.classList.add("change-read");
+
+  changeReadStatus.classList.add("change-read-status");
   changeReadStatus.innerHTML = "Change Read Status";
   changeReadStatus.dataset.index = bookIndex;
   changeReadStatus.addEventListener("click", changeStatus);
-  bookDiv.appendChild(changeReadStatus);
+  statusDiv.appendChild(changeReadStatus);
 
 };
 
